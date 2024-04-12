@@ -1,51 +1,51 @@
+/* Base styles */
 body, html {
     font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text */
 }
 
 .container {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #1e1e1e; /* Slightly lighter dark shade for the form background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 input[type="text"], input[type="number"], select, textarea {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    background-color: #333; /* Darker elements */
+    border: 1px solid #555; /* Subtle borders */
+    color: #ddd; /* Light text on dark elements */
     box-sizing: border-box;
 }
 
 button {
     width: 100%;
     padding: 10px;
-    background-color: #007BFF;
+    background-color: #007BFF; /* Bright color for buttons */
     color: white;
     border: none;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .tooltip {
     display: block;
-    background-color: #f9f9f9;
-    border: 1px solid #d3d3d3;
+    background-color: #333; /* Dark tooltip background */
+    border: 1px solid #555; /* Darker border for tooltip */
     padding: 5px;
     font-size: 12px;
-    color: #666;
+    color: #bbb; /* Lighter text for readability */
     margin: 5px 0 15px 0;
-}
-
-input, textarea, select {
-    position: relative;
 }
 
 input:hover + .tooltip, textarea:hover + .tooltip, select:hover + .tooltip {
