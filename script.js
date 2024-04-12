@@ -21,6 +21,12 @@ function copyToClipboard() {
     document.execCommand('copy');
 }
 
+function postToX() {
+    const postText = document.getElementById('output').value;
+    const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postText)}`;
+    window.open(xUrl, '_blank');
+}
+
 document.getElementById('fsdForm').addEventListener('submit', function(event) {
     event.preventDefault();
     generatePost();
