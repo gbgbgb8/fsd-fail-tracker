@@ -9,8 +9,9 @@ function generatePost() {
     const successes = document.getElementById('successes').value;
     const timestamp = new Date().getTime();
     const referenceID = `FSD${timestamp}`;
+    const feedbackURL = 'https://fsd-fail-tracker.vercel.app';
 
-    const post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD #FSD${type}`;
+    const post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD #FSD${type}\nLog FSD Feedback: ${feedbackURL}`;
 
     document.getElementById('output').value = post;
 }
