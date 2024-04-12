@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tesla FSD Feedback Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Tesla FSD Feedback Form</h1>
+        <form id="fsdForm">
+            <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
+            <select id="type">
+                <option value="Safety">Safety</option>
+                <option value="Convenience">Convenience</option>
+            </select>
+            <input type="text" id="location" placeholder="City, State" required>
+            <input type="text" id="mapLink" placeholder="Google Maps Link" required>
+            <textarea id="details" placeholder="Details" required></textarea>
+            <input type="number" id="attempts" placeholder="Times Repeated" required>
+            <input type="number" id="fails" placeholder="Fails" required>
+            <input type="number" id="successes" placeholder="Successes" required>
+            <button type="button" onclick="generatePost()">Generate Post</button>
+        </form>
+        <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
+        <button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
