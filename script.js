@@ -40,6 +40,14 @@ function copyToClipboard() {
     document.execCommand('copy');
 }
 
+function postToX() {
+    const postText = document.getElementById('output').value; // Retrieve the generated post text from the textarea
+    // Encode the post text to ensure it is URL-safe, which means converting special characters into a format that can be transmitted over the internet
+    const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postText)}`;
+    // Open the Twitter intent URL in a new browser tab, allowing the user to edit further or directly post it on Twitter
+    window.open(xUrl, '_blank');
+}
+
 function copyTSVToClipboard() {
     const version = document.getElementById('version').value;
     const type = document.querySelector('input[name="type"]:checked').value;
