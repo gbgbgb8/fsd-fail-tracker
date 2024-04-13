@@ -81,3 +81,22 @@ label {
 input[type="radio"], input[type="checkbox"] {
     margin-right: 10px;
 }
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+button {
+    flex: 1;  /* Ensures that buttons expand to fill the row evenly */
+    margin: 5px; /* Spacing between buttons */
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
