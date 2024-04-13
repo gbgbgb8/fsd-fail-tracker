@@ -17,18 +17,24 @@ function generatePost() {
     const fails = document.getElementById('fails').value;
     const successes = document.getElementById('successes').value;
     const weatherNotification = document.getElementById('weatherNotification').checked;
-    const enteredReferenceID = document.getElementById('referenceID').value.trim();
-    const timestamp = new Date().getTime();
-    const referenceID = enteredReferenceID || `FSD${timestamp}`;
-    const feedbackURL = 'https://fsd-fail-tracker.vercel.app';
-
-    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD`;
+    const referenceID = document.getElementById('referenceID').value;
+    const twitterHandle = document.getElementById('twitterHandle').value.trim();
     
+    // Construct the Twitter search URL only if a handle is provided
+    const twitterSearchURL = twitterHandle ? `https://twitter.com/search?q=from%3A${encodeURIComponent(twitterHandle)}%20%23TrainFSD` : '';
+
+    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD #FSD${type}`;
+
     if (weatherNotification) {
         post += `\n⚠︎ FSD Weather Notification on Screen: Yes`;
     }
 
     post += `\nLog FSD Feedback: ${feedbackURL}`;
+
+    // Add the Twitter search URL to the post if it exists
+    if (twitterSearchURL) {
+        post += `\nSee more posts from this user: ${twitterSearchURL}`;
+    }
 
     document.getElementById('output').value = post;
 }

@@ -15,6 +15,7 @@
             <p>Only the in-car voice disengagement feedback goes to Tesla. The purpose of this form is to collect user feedback on Tesla Full Self-Driving experiences, particularly focusing on instances where human intervention was necessary. To use the form, simply fill out the details about your experience, generate the post, and then either copy to clipboard or post directly to 𝕏. This allows FSD drivers to collectively identify and report on challenges faced during FSD operation.</p>
         </div>
         <form id="fsdForm">
+            <input type="text" id="twitterHandle" placeholder="@XHandle (optional)">
             <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
             <p>Disengagement?</p>
             <label>
@@ -35,7 +36,7 @@
             <input type="number" id="attempts" placeholder="Times Repeated" required>
             <input type="number" id="fails" placeholder="Fails" required>
             <input type="number" id="successes" placeholder="Successes" required>
-            <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
+            <input type="text" id="referenceID" placeholder="Correlate to existing ReferenceID (leave blank to generate new rID)">
             <label>
                 <input type="checkbox" id="weatherNotification" name="weatherNotification">
                 ⚠︎ FSD Weather Notification on Screen?
