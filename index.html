@@ -9,28 +9,23 @@
 <body>
     <div class="container">
         <h1>Tesla FSD Feedback Form</h1>
+        <button onclick="toggleMoreInfo()" class="info-btn">More Info</button>
+        <div id="moreInfo" class="more-info" style="display: none;">
+            <p>All fields are optional but providing more detailed information helps better identify specific areas where FSD might require improvements. The purpose of this form is to collect user feedback on Tesla Full Self-Driving experiences, particularly focusing on instances where human intervention was necessary. To use the form, simply fill out the details about your experience, generate the post, and then either copy to clipboard or post directly to 𝕏. This allows FSD drivers to collectively identify and report on challenges faced during FSD operation.</p>
+        </div>
         <form id="fsdForm">
             <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
-            <span class="tooltip">Enter the version of FSD being used, e.g., "12.3.4".</span>
             <select id="type">
                 <option value="Safety">Safety</option>
                 <option value="Convenience">Convenience</option>
             </select>
-            <span class="tooltip">Select the type of intervention: "Safety" for critical interventions, "Convenience" for comfort-related interventions.</span>
             <input type="text" id="location" placeholder="City, State" required>
-            <span class="tooltip">Enter the location as city and state, e.g., "Palo Alto, CA".</span>
             <input type="text" id="mapLink" placeholder="Google Maps Link" required>
-            <span class="tooltip">Provide a Google Maps link to the location of the event.</span>
             <textarea id="details" placeholder="Details" required></textarea>
-            <span class="tooltip">Describe the scenario briefly. Include any relevant details about the event.</span>
             <input type="number" id="attempts" placeholder="Times Repeated" required>
-            <span class="tooltip">Enter how many times you have tried this scenario.</span>
             <input type="number" id="fails" placeholder="Fails" required>
-            <span class="tooltip">How many times did FSD fail in this scenario?</span>
             <input type="number" id="successes" placeholder="Successes" required>
-            <span class="tooltip">How many times did FSD succeed in this scenario?</span>
             <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
-            <span class="tooltip">Optional: Enter a ReferenceID from another post to correlate data.</span>
             <button type="button" onclick="generatePost()">Generate Post</button>
         </form>
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>

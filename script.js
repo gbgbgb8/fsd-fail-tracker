@@ -1,3 +1,12 @@
+function toggleMoreInfo() {
+    var info = document.getElementById("moreInfo");
+    if (info.style.display === "none") {
+        info.style.display = "block";
+    } else {
+        info.style.display = "none";
+    }
+}
+
 function generatePost() {
     const version = document.getElementById('version').value;
     const type = document.getElementById('type').value;

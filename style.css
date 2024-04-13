@@ -1,4 +1,3 @@
-/* Base styles */
 body, html {
     font-family: Arial, sans-serif;
     padding: 0;
@@ -50,4 +49,25 @@ button:hover {
 
 input:hover + .tooltip, textarea:hover + .tooltip, select:hover + .tooltip {
     visibility: visible;
+}
+
+.info-btn {
+    margin: 10px 0;
+    background-color: #444; /* Dark button background */
+    color: #ccc; /* Light text for visibility */
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.info-btn:hover {
+    background-color: #666;
+}
+
+.more-info {
+    background-color: #333;
+    color: #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
