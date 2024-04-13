@@ -22,7 +22,7 @@ function generatePost() {
     const referenceID = enteredReferenceID || `FSD${timestamp}`;
     const feedbackURL = 'https://fsd-fail-tracker.vercel.app';
 
-    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD #FSD${type}`;
+    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD`;
     
     if (weatherNotification) {
         post += `\n⚠︎ FSD Weather Notification on Screen: Yes`;
