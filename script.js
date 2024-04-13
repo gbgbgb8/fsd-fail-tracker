@@ -17,11 +17,12 @@ function generatePost() {
     const fails = document.getElementById('fails').value;
     const successes = document.getElementById('successes').value;
     const weatherNotification = document.getElementById('weatherNotification').checked;
+    const enteredReferenceID = document.getElementById('referenceID').value.trim();
     const timestamp = new Date().getTime();
-    const referenceID = `FSD${timestamp}`;
+    const referenceID = enteredReferenceID || `FSD${timestamp}`;
     const feedbackURL = 'https://fsd-fail-tracker.vercel.app';
 
-    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD`;
+    let post = `🚘 Tesla FSD Feedback 🚘\nVersion: ${version}\nType: ${type}\nLocation: ${location} ${mapLink}\nDetails: ${details}\nAttempts: ${attempts} | Fails: ${fails} | Successes: ${successes}\nReferenceID: ${referenceID}\n#TrainFSD #FSD${type}`;
     
     if (weatherNotification) {
         post += `\n⚠︎ FSD Weather Notification on Screen: Yes`;
@@ -31,6 +32,7 @@ function generatePost() {
 
     document.getElementById('output').value = post;
 }
+
 
 
 function copyToClipboard() {
