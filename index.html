@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tesla FSD Feedback Generator</title>
+    <title>Tesla FSD Feedback (Unofficial)</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,11 +11,10 @@
         <h1>Tesla FSD Feedback Form</h1>
         <button onclick="toggleMoreInfo()" class="info-btn">More Info</button>
         <div id="moreInfo" class="more-info" style="display: none;">
-            <p>All fields are optional but providing more detailed information helps better identify specific areas where FSD might require improvements. The purpose of this form is to collect user feedback on Tesla Full Self-Driving experiences, particularly focusing on instances where human intervention was necessary. To use the form, simply fill out the details about your experience, generate the post, and then either copy to clipboard or post directly to 𝕏. This allows FSD drivers to collectively identify and report on challenges faced during FSD operation.</p>
+            <p>Only the in-car voice disengagement feedback goes to Tesla. All fields are optional. The purpose of this form is to collect user feedback on Tesla Full Self-Driving experiences, particularly focusing on instances where human intervention was necessary. To use the form, simply fill out the details about your experience, generate the post, and then either copy to clipboard or post directly to 𝕏. This allows FSD drivers to collectively identify and report on challenges faced during FSD operation.</p>
         </div>
-        <<form id="fsdForm">
+        <form id="fsdForm">
             <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
-            <!-- Updated Radio Buttons for Type -->
             <label>
                 <input type="radio" id="typeSafety" name="type" value="Safety" checked>
                 Safety
@@ -33,7 +32,7 @@
             <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
             <label>
                 <input type="checkbox" id="weatherNotification" name="weatherNotification">
-                ⚠︎ FSD Weather Notification on Screen
+                ⚠︎ FSD Weather Notification on Screen?
             </label>
             <button type="button" onclick="generatePost()">Generate Post</button>
         </form>              
