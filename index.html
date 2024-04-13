@@ -16,8 +16,13 @@
         </div>
         <form id="fsdForm">
             <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
+            <p>Disengagement?</p>
             <label>
-                <input type="radio" id="typeSafety" name="type" value="Safety" checked>
+                <input type="radio" id="typeNoDisengagement" name="type" value="No Disengagement, FSD Works Here" checked>
+                No Disengagement, FSD Works Here
+            </label>
+            <label>
+                <input type="radio" id="typeSafety" name="type" value="Safety">
                 Safety
             </label>
             <label>
@@ -36,7 +41,7 @@
                 ⚠︎ FSD Weather Notification on Screen?
             </label>
             <button type="button" onclick="generatePost()">Generate Post</button>
-        </form>              
+        </form>                      
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
         <button onclick="copyToClipboard()">Copy to Clipboard</button>
         <button onclick="postToX()">Post to 𝕏</button>
