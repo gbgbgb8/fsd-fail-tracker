@@ -41,10 +41,11 @@
                 ⚠︎ FSD Weather Notification on Screen?
             </label>
             <button type="button" onclick="generatePost()">Generate Post</button>
-        </form>                      
+            <button onclick="copyToClipboard()">Copy to Clipboard</button>
+            <button onclick="copyCSVToClipboard()">Copy CSV to Clipboard</button>
+            <button onclick="postToX()">Post to 𝕏</button>
+        </form>
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
-        <button onclick="copyToClipboard()">Copy to Clipboard</button>
-        <button onclick="postToX()">Post to 𝕏</button>
     </div>
     <script src="script.js"></script>
 </body>
