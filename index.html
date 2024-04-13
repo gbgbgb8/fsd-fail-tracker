@@ -13,15 +13,16 @@
         <div id="moreInfo" class="more-info" style="display: none;">
             <p>All fields are optional but providing more detailed information helps better identify specific areas where FSD might require improvements. The purpose of this form is to collect user feedback on Tesla Full Self-Driving experiences, particularly focusing on instances where human intervention was necessary. To use the form, simply fill out the details about your experience, generate the post, and then either copy to clipboard or post directly to 𝕏. This allows FSD drivers to collectively identify and report on challenges faced during FSD operation.</p>
         </div>
-        <form id="fsdForm">
+        <<form id="fsdForm">
             <input type="text" id="version" placeholder="FSD Version (e.g., 12.3.4)" required>
-            <select id="type">
-                <option value="Safety">Safety</option>
-                <option value="Convenience">Convenience</option>
-            </select>
+            <!-- Updated Radio Buttons for Type -->
             <label>
-                <input type="checkbox" id="weatherNotification" name="weatherNotification">
-                "⚠︎ FSD Degraded due to Weather" Notification on Screen?
+                <input type="radio" id="typeSafety" name="type" value="Safety" checked>
+                Safety
+            </label>
+            <label>
+                <input type="radio" id="typeConvenience" name="type" value="Convenience">
+                Convenience
             </label>
             <input type="text" id="location" placeholder="City, State" required>
             <input type="text" id="mapLink" placeholder="Google Maps Link" required>
@@ -29,8 +30,13 @@
             <input type="number" id="attempts" placeholder="Times Repeated" required>
             <input type="number" id="fails" placeholder="Fails" required>
             <input type="number" id="successes" placeholder="Successes" required>
-            <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)"><button type="button" onclick="generatePost()">Generate Post</button>
-        </form>        
+            <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
+            <label>
+                <input type="checkbox" id="weatherNotification" name="weatherNotification">
+                ⚠︎ FSD Weather Notification on Screen
+            </label>
+            <button type="button" onclick="generatePost()">Generate Post</button>
+        </form>              
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
         <button onclick="copyToClipboard()">Copy to Clipboard</button>
         <button onclick="postToX()">Post to 𝕏</button>

@@ -9,7 +9,7 @@ function toggleMoreInfo() {
 
 function generatePost() {
     const version = document.getElementById('version').value;
-    const type = document.getElementById('type').value;
+    const type = document.querySelector('input[name="type"]:checked').value;
     const location = document.getElementById('location').value;
     const mapLink = document.getElementById('mapLink').value;
     const details = document.getElementById('details').value;

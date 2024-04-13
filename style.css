@@ -71,3 +71,13 @@ input:hover + .tooltip, textarea:hover + .tooltip, select:hover + .tooltip {
     border-radius: 5px;
     margin-bottom: 20px;
 }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ddd;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin-right: 10px;
+}
