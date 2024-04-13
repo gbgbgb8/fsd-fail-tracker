@@ -19,18 +19,17 @@
                 <option value="Safety">Safety</option>
                 <option value="Convenience">Convenience</option>
             </select>
+            <label>
+                <input type="checkbox" id="weatherNotification" name="weatherNotification">
+                "⚠︎ FSD Degraded due to Weather" Notification on Screen?
+            </label>
             <input type="text" id="location" placeholder="City, State" required>
             <input type="text" id="mapLink" placeholder="Google Maps Link" required>
             <textarea id="details" placeholder="Details" required></textarea>
             <input type="number" id="attempts" placeholder="Times Repeated" required>
             <input type="number" id="fails" placeholder="Fails" required>
             <input type="number" id="successes" placeholder="Successes" required>
-            <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
-            <label>
-                <input type="checkbox" id="weatherNotification" name="weatherNotification">
-                ⚠︎ FSD Weather Notification on Screen
-            </label>
-            <button type="button" onclick="generatePost()">Generate Post</button>
+            <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)"><button type="button" onclick="generatePost()">Generate Post</button>
         </form>        
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
         <button onclick="copyToClipboard()">Copy to Clipboard</button>
