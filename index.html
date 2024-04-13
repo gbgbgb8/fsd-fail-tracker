@@ -26,8 +26,12 @@
             <input type="number" id="fails" placeholder="Fails" required>
             <input type="number" id="successes" placeholder="Successes" required>
             <input type="text" id="referenceID" placeholder="Existing ReferenceID (optional)">
+            <label>
+                <input type="checkbox" id="weatherNotification" name="weatherNotification">
+                ⚠︎ FSD Weather Notification on Screen
+            </label>
             <button type="button" onclick="generatePost()">Generate Post</button>
-        </form>
+        </form>        
         <textarea id="output" placeholder="Generated post will appear here..." readonly></textarea>
         <button onclick="copyToClipboard()">Copy to Clipboard</button>
         <button onclick="postToX()">Post to 𝕏</button>
