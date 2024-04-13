@@ -41,26 +41,27 @@ function copyToClipboard() {
     document.execCommand('copy');
 }
 
-function copyCSVToClipboard() {
+function copyTSVToClipboard() {
     const version = document.getElementById('version').value;
     const type = document.querySelector('input[name="type"]:checked').value;
     const location = document.getElementById('location').value;
     const mapLink = document.getElementById('mapLink').value;
-    const details = document.getElementById('details').value.replace(/"/g, '""');  // Escape double quotes
+    const details = document.getElementById('details').value.replace(/"/g, '\"'); // Escape double quotes in TSV if necessary
     const attempts = document.getElementById('attempts').value;
     const fails = document.getElementById('fails').value;
     const successes = document.getElementById('successes').value;
     const weatherNotification = document.getElementById('weatherNotification').checked ? "Yes" : "No";
     const referenceID = document.getElementById('referenceID').value;
 
-    // Create a CSV string with proper new lines and field encapsulation
-    const csvData = `"Version","Type","Location","Map Link","Details","Attempts","Fails","Successes","Weather Notification","ReferenceID"\r\n` +
-                    `"${version}","${type}","${location}","${mapLink}","${details}","${attempts}","${fails}","${successes}","${weatherNotification}","${referenceID}"`;
+    // Create a TSV string. No need for quotes around fields, just separate by tabs
+    const tsvData = `Version\tType\tLocation\tMap Link\tDetails\tAttempts\tFails\tSuccesses\tWeather Notification\tReferenceID\n` +
+                    `${version}\t${type}\t${location}\t${mapLink}\t${details}\t${attempts}\t${fails}\t${successes}\t${weatherNotification}\t${referenceID}`;
 
-    navigator.clipboard.writeText(csvData).then(function() {
-        console.log('CSV data copied to clipboard successfully!');
+    // Use the Clipboard API to copy the TSV string to the clipboard
+    navigator.clipboard.writeText(tsvData).then(function() {
+        console.log('TSV data copied to clipboard successfully!');
     }, function(err) {
-        console.error('Could not copy CSV data to clipboard: ', err);
+        console.error('Could not copy TSV data to clipboard: ', err);
     });
 }
 
