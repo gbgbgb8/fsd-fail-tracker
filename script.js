@@ -41,10 +41,7 @@ function copyToClipboard() {
 }
 
 function postToX() {
-    const postText = document.getElementById('output').value; // Retrieve the generated post text from the textarea
-    // Encode the post text to ensure it is URL-safe, which means converting special characters into a format that can be transmitted over the internet
-    const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postText)}`;
-    // Open the Twitter intent URL in a new browser tab, allowing the user to edit further or directly post it on Twitter
+    const postText = document.getElementById('output').value;const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(postText)}`;
     window.open(xUrl, '_blank');
 }
 
@@ -53,7 +50,7 @@ function copyTSVToClipboard() {
     const type = document.querySelector('input[name="type"]:checked').value;
     const location = document.getElementById('location').value;
     const mapLink = document.getElementById('mapLink').value;
-    const details = document.getElementById('details').value.replace(/"/g, '\"'); // Escape double quotes
+    const details = document.getElementById('details').value.replace(/"/g, '\"');
     const attempts = document.getElementById('attempts').value;
     const fails = document.getElementById('fails').value;
     const successes = document.getElementById('successes').value;
