@@ -64,6 +64,34 @@ function copyCSVToClipboard() {
     });
 }
 
+function downloadCSV() {
+    const version = document.getElementById('version').value;
+    const type = document.querySelector('input[name="type"]:checked').value;
+    const location = document.getElementById('location').value;
+    const mapLink = document.getElementById('mapLink').value;
+    const details = document.getElementById('details').value.replace(/"/g, '""');  // Escape double quotes
+    const attempts = document.getElementById('attempts').value;
+    const fails = document.getElementById('fails').value;
+    const successes = document.getElementById('successes').value;
+    const weatherNotification = document.getElementById('weatherNotification').checked ? "Yes" : "No";
+    const referenceID = document.getElementById('referenceID').value;
+
+    const csvData = `"Version","Type","Location","Map Link","Details","Attempts","Fails","Successes","Weather Notification","ReferenceID"\r\n` +
+                    `"${version}","${type}","${location}","${mapLink}","${details}","${attempts}","${fails}","${successes}","${weatherNotification}","${referenceID}"`;
+
+    // Create a Blob with the CSV data
+    const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+
+    // Create a temporary link to initiate the download
+    const downloadLink = document.createElement("a");
+    downloadLink.href = url;
+    downloadLink.setAttribute("download", "fsd_feedback.csv");  // Name the file
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+}
+
 
 function postToX() {
     const postText = document.getElementById('output').value;
